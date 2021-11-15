@@ -1,0 +1,13 @@
+alias scim=sc-im\
+        pm='doas pacman'\
+        reload='source ~/.bashrc'\
+        myip='curl ipinfo.io/ip'\
+        ports='netstat -tulanp'\
+        sha='shasum -a 256'\
+        mkdir='mkdir -pv'\
+        histc='history -c'\
+        ytdl='youtube-dl'\
+        yta='youtube-dl -x --audio-format mp3'\
+        weather='curl wttr.in'\
+        nf='neofetch'\
+        ls='ls -h --color'
