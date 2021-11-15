@@ -153,3 +153,4 @@ shopt -s dotglob
 shopt -s autocd
 set -o vi
 
+export PATH="$HOME/.local/bin/statusbar:$PATH"

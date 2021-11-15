@@ -1,8 +1,7 @@
 #exec slock
 
-# slstatus &
-dwmblocks &
-# feh --bg-fill ~/Pictures/wallpaper.png
+slstatus &
+feh --bg-fill ~/Pictures/arch-wallpaper.png
 
 # Hide the mouse after 3 seconds inactivity
 unclutter -idle 3 &
