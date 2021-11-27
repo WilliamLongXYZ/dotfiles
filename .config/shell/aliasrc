@@ -1,13 +1,64 @@
-alias scim=sc-im\
-        pm='doas pacman'\
-        reload='source ~/.bashrc'\
+#!/bin/sh
+
+[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+
+# root privelages not required for some system commands
+for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
+        alias $command="doas $command"
+done; unset command
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+        cp="cp -iv" \
+        mv="mv -iv" \
+        rm="rm -vI" \
+        bc="bc -ql" \
+        mkd="mkdir -pv" \
+        yt="youtube-dl --add-metadata -i" \
+        yta="yt -x -f bestaudio/best" \
+        ffmpeg="ffmpeg -hide_banner" \
+        df="df -h" \
+        free='free -m' \
+
+# Colorize commands when possible.
+alias \
+        ls="ls -hN --color=auto --group-directories-first" \
+        grep="grep --color=auto" \
+        diff="diff --color=auto" \
+        ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+        ka="killall" \
+        g="git" \
+        config="g --git-dir=$HOME/.local/src/dotfiles --work-tree=$HOME" \
+        trem="transmission-remote" \
+        YT="youtube-viewer" \
+        sdn="shutdown -h now" \
+        e="$EDITOR" \
+        v="$EDITOR" \
         myip='curl ipinfo.io/ip'\
-        ports='netstat -tulanp'\
-        sha='shasum -a 256'\
-        mkdir='mkdir -pv'\
-        histc='history -c'\
-        ytdl='youtube-dl'\
-        yta='youtube-dl -x --audio-format mp3'\
-        weather='curl wttr.in'\
-        nf='neofetch'\
-        ls='ls -h --color'
+        ports='netstat -tulanp' \
+        p="pacman" \
+        xi="doas xbps-install" \
+        xr="doas xbps-remove -R" \
+        xq="xbps-query" \
+        z="zathura" \
+        sha='shasum -a 256' \
+        weather="curl wttr.in" \
+        lsa="ls -A" \
+        scim=sc-im \
+
+# XDG Compliance
+alias \
+        vim="vim -u $XDG_CONFIG_HOME/vim/vimrc" \
+        brave="brave; rm -r $HOME/.pki/ > /dev/null" \
+        abook="abook --datafile $XDG_DATA_HOME/abook/addressbook" \
+
+# Other useful aliases
+alias \
+        reload='source $XDG_CONFIG_HOME/zsh/.zshrc' \
+        updshorts='shortcuts >/dev/null; source $XDG_CONFIG_HOME/shell/shortcutrc; source $XDG_CONFIG_HOME/shell/zshnameddirrc' \
+        ref="updshorts; reload" \
+        weath="getweather" \
+

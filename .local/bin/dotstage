@@ -1,0 +1,22 @@
+#!/bin/sh
+
+git --git-dir=$HOME/.local/src/dotfiles --work-tree=$HOME add \
+        $XDG_CONFIG_HOME/calcurse \
+        $XDG_CONFIG_HOME/dunst \
+        $XDG_CONFIG_HOME/fontconfig \
+        $XDG_CONFIG_HOME/htop \
+        $XDG_CONFIG_HOME/lf \
+        $XDG_CONFIG_HOME/mpd \
+        $XDG_CONFIG_HOME/ncmpcpp \
+        $XDG_CONFIG_HOME/newsboat \
+        $XDG_CONFIG_HOME/pipewire \
+        $XDG_CONFIG_HOME/shell \
+        $XDG_CONFIG_HOME/vim \
+        $XDG_CONFIG_HOME/wget \
+        $XDG_CONFIG_HOME/x11 \
+        $XDG_CONFIG_HOME/yay \
+        $XDG_CONFIG_HOME/zathura \
+        $XDG_CONFIG_HOME/zsh \
+        $XDG_CONFIG_HOME/dircolors \
+        $HOME/.local/bin/ex \
+        $HOME/.local/bin/dotstage \

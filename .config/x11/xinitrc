@@ -1,0 +1,11 @@
+setbg
+
+# Hide the mouse after 3 seconds inactivity
+unclutter -idle 3 &
+xrdb ~/.Xresources &
+dunst &
+
+
+# Log DWM's output
+exec dwm > ~/.local/share/dwm/log
+

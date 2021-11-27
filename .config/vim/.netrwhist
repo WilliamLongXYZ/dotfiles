@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/will/.config/vim/plugged/goyo.vim/plugin'
+let g:netrw_dirhist_6='/home/will/.config/vim/plugged/goyo.vim'
+let g:netrw_dirhist_5='/home/will/.config/vim/plugged'
+let g:netrw_dirhist_4='/home/will/.config/vim/plugged/nerdtree'
+let g:netrw_dirhist_3='/home/will/.config/vim/plugged'
+let g:netrw_dirhist_2='/home/will/.config/vim'
+let g:netrw_dirhist_1='/home/will/.config'
