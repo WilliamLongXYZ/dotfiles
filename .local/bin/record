@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# ffmpeg -i /dev/video0 $1-webcam.mkv
+# ffmpeg -f x11grab -s 1600x900 -i $(echo $DISPLAY) $1-screen.mkv
+
+
+
+ffmpeg -f x11grab -s 1600x900 -i $(echo $DISPLAY) -f alsa -i default $1-screen.mkv
+

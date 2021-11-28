@@ -18,5 +18,5 @@ git --git-dir=$HOME/.local/src/dotfiles --work-tree=$HOME add \
         $XDG_CONFIG_HOME/zathura \
         $XDG_CONFIG_HOME/zsh \
         $XDG_CONFIG_HOME/dircolors \
-        $HOME/.local/bin/ex \
-        $HOME/.local/bin/dotstage \
+        $XDG_CONFIG_HOME/sxiv \
+        $HOME/.local/bin \

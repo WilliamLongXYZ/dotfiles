@@ -85,3 +85,4 @@ else
         alias mirrora="doas $mirrorcmd --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 fi
 
+alias "git commit"="git commit -S"

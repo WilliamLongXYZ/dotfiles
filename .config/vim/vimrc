@@ -37,7 +37,7 @@ set noruler " disable display of cursor location
 set laststatus=0
 set noshowcmd
 
-autocmd BufWritePost * silent !compiler <afile>
+" autocmd BufWritePost * silent !compiler <afile>
 inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
 inoremap ( ()<Esc>i
