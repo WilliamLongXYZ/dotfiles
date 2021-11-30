@@ -1,11 +1,6 @@
 set nocompatible
 
-set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
-set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
-set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
 
 " Character mapping for easier navigation
 map <C-j> <C-w>j
@@ -37,15 +32,19 @@ set noruler " disable display of cursor location
 set laststatus=0
 set noshowcmd
 
-" autocmd BufWritePost * silent !compiler <afile>
+autocmd BufWritePost * silent !compiler <afile>
+
 inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
+
+" inoremap ( ()<Esc>i
+" inoremap [ []<Esc>i
+" inoremap { {}<Esc>i
 
 source $XDG_CONFIG_HOME/vim/plugins/ipa.vim
 source $XDG_CONFIG_HOME/vim/plugins/goyo.vim
 
 filetype plugin on
+
+
 

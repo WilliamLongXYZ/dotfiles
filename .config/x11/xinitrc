@@ -7,5 +7,7 @@ dunst &
 
 
 # Log DWM's output
-exec dwm > ~/.local/share/dwm/log
+# exec dwm > ~/.local/share/dwm/log
 
+
+exec dwm

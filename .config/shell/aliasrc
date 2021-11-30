@@ -9,7 +9,7 @@ done; unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-        cp="cp -iv" \
+        cp="cp -rpiv" \
         mv="mv -iv" \
         rm="rm -vI" \
         bc="bc -ql" \
@@ -33,8 +33,7 @@ alias \
         g="git" \
         config="g --git-dir=$HOME/.local/src/dotfiles --work-tree=$HOME" \
         trem="transmission-remote" \
-        YT="youtube-viewer" \
-        sdn="shutdown -h now" \
+        YT="youtube-viewer" \ sdn="shutdown -h now" \
         e="$EDITOR" \
         v="$EDITOR" \
         myip='curl ipinfo.io/ip'\
@@ -76,13 +75,24 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 
-if [[ $(uname -a) == *"MANJARO"* ]]; then
-true
-else
-        alias mirror="doas $mirrorcmd -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-        alias mirrord="doas $mirrorcmd --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-        alias mirrors="doas $mirrorcmd --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-        alias mirrora="doas $mirrorcmd --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-fi
+case $(uname -a) in
+        *"MANJARO"*)
+                true
+        ;;
+        *)
+                alias mirror="doas $mirrorcmd -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+                alias mirrord="doas $mirrorcmd --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+                alias mirrors="doas $mirrorcmd --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+                alias mirrora="doas $mirrorcmd --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+        ;;
+esac
 
-alias "git commit"="git commit -S"
+# alias "git commit"="git commit -S"
+alias latin="words"
+
+alias progs="(pacman -Qet; pacman -Qm) | sort -u"
+alias orphans="pacman -Qdt"
+
+alias sx="/usr/bin/sx $XDG_CONFIG_HOME/x11/xinitrc"
+
+alias "transmission-remote"="/usr/bin/transmission-remote -w $XDG_DATA_HOME/downloads/torrents -c $XDG_DATA_HOME/downloads/torrents-incomplete"
