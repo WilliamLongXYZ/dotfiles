@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+dl () {
+        AFTER=$(date -r .archives/"$1"ttxt +%Y%m%d 2>/dev/null || date +%Y%m%d)
+        youtube-dl --download-archive .archives/$1.txt \
+                --format bestvideo+bestaudio "$2" \
+                #--write-sub --write-auto-sub --sub-format srt/best --sub-lang en --embed-subs \
+                #--dateafter $AFTER --playlist-end 5\
+                --output "%(uploader)s/%(title)s.%(ext)s"
+        sleep 5
+}
+notify-send -i video-x-generic "Downloads finished" "Check the YouTube folder for new videos"
+
+
+dl lukesmith https://www.youtube.com/c/LukeSmithxyz/
+
+
