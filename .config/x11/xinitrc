@@ -1,13 +1,29 @@
-setbg
-
+#!/bin/sh
 # Hide the mouse after 3 seconds inactivity
 unclutter -idle 3 &
-xrdb ~/.Xresources &
-dunst &
 
+# Start programs
+dwmblocks &
+xcompmgr &
+dunst &
+# picom &
+transmission-daemon
+setbg $HOME/Pictures/landscapes
+
+userresources=$XDG_CONFIG_HOME/x11/xresources
+usermodmap=$XDG_CONFIG_HOME/x11/xmodmap
+
+# merge in defaults and keymaps
+# xrdb -merge "$userresources"
+xmodmap "$usermodmap"
+
+# Other things
+export SSH_AUTH_SOCK
+export XDG_SESSION_TYPE=X11
+
+xrandr --auto
+xrandr --dpi 96
 
 # Log DWM's output
-# exec dwm > ~/.local/share/dwm/log
+exec dwm > ~/.local/share/dwm/log
 
-
-exec dwm

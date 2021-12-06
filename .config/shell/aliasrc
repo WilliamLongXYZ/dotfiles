@@ -7,6 +7,8 @@ for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
         alias $command="doas $command"
 done; unset command
 
+alias most="du -hsx * | sort -rh | head -10"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
         cp="cp -rpiv" \
@@ -14,10 +16,12 @@ alias \
         rm="rm -vI" \
         bc="bc -ql" \
         mkd="mkdir -pv" \
+        mkdir="mkdir -pv" \
         yt="youtube-dl --add-metadata -i" \
         yta="yt -x -f bestaudio/best" \
         ffmpeg="ffmpeg -hide_banner" \
         df="df -h" \
+        du="du -h" \
         free='free -m' \
 
 # Colorize commands when possible.
@@ -37,7 +41,7 @@ alias \
         e="$EDITOR" \
         v="$EDITOR" \
         myip='curl ipinfo.io/ip'\
-        ports='netstat -tulanp' \
+        ports='doas netstat -tulanp' \
         p="pacman" \
         xi="doas xbps-install" \
         xr="doas xbps-remove -R" \
@@ -52,7 +56,7 @@ alias \
 alias \
         vim="vim -u $XDG_CONFIG_HOME/vim/vimrc" \
         brave="brave; rm -r $HOME/.pki/ > /dev/null" \
-        abook="abook --datafile $XDG_DATA_HOME/abook/addressbook" \
+        #abook="abook --datafile $XDG_DATA_HOME/abook/addressbook" \
 
 # Other useful aliases
 alias \
@@ -93,6 +97,17 @@ alias latin="words"
 alias progs="(pacman -Qet; pacman -Qm) | sort -u"
 alias orphans="pacman -Qdt"
 
-alias sx="/usr/bin/sx $XDG_CONFIG_HOME/x11/xinitrc"
-
 alias "transmission-remote"="/usr/bin/transmission-remote -w $XDG_DATA_HOME/downloads/torrents -c $XDG_DATA_HOME/downloads/torrents-incomplete"
+alias htp="pandoc $1.html -t latex -o test.pdf"
+
+
+alias sx="/usr/bin/sx $XDG_CONFIG_HOME/x11/xinitrc"
+alias picom="/usr/bin/picom --backend xrender"
+
+
+alias ccaur="yes | yay -Sc; yay -Yc"
+alias xpinst="yay -Qe"
+alias hdu="dust --ignore-directory Pictures --ignore-directory Videos --ignore-directory Music --ignore-directory Documents --ignore-directory .cache/BraveSoftware --ignore-directory .config/BraveSoftware --ignore-directory .local/share/litecoin --ignore-directory .local/share/monero"
+alias exi=exit
+# alias shcd="cd $(shfm)"
+#alias cd="builtin cd; source $XDG_CONFIG_HOME/shell/promptless"

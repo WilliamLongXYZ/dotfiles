@@ -1,0 +1,19 @@
+#!/bin/sh
+
+bold="$(tput bold)"
+red="[31m"
+yellow="[33m"
+green="[32m"
+blue="[34m"
+purple="[35m"
+white="[00m"
+normal="$(tput rmso)"
+
+dir="$(echo $PWD | sed 's/.*\///')"
+
+if [ $dir = "will" ]; then
+        dir="~"
+fi
+
+export PS1="$bold${red}[$yellow$USER$green@$blue$HOST $purple$dir${red}]$white$ ➜  $normal"
+

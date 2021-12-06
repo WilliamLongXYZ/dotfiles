@@ -1,0 +1,19 @@
+#!/usr/bin
+
+find /mnt/backups/ -mtime +28 -delete
+[ -f '/mnt/backups/full_backup-$(date +"%Y-%m-%d")' ] && exit
+tar -cvpzf /mnt/backups/full_backup-$(date +"%Y-%m-%d") / --one-file-system
+
+# pushd /
+# doas tar -cvpzf $filename.tar.gz \
+#         --exclude=/backup.tar.gz \
+#         --exclude=/proc \
+#         --exclude=/tmp \
+#         --exclude=/mnt \
+#         --exclude=/dev \
+#         --exclude=/sys \
+#         --exclude=/run \
+#         --exclude=/media \
+#         --exclude=/var/logs \ # remove this line if running on a server
+
+# doas tar -cvpzf backup-2021-12-01-16-03.tar.gz --one-file-system /

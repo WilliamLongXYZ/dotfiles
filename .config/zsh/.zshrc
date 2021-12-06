@@ -1,8 +1,6 @@
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-# source ~/promptless.sh
+source $XDG_CONFIG_HOME/shell/promptless # Set PS1
 
 setopt autocd
 stty stop undef		# Disable ctrl-s to freeze terminal.
@@ -51,16 +49,9 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n'
+
+# runs shfm on startup
+# bindkey -s '^o' 'cd $(shfm)\n'
 bindkey -s '^a' 'bc -lq\n'
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey '^[[P' delete-char
@@ -72,8 +63,10 @@ bindkey '^e' edit-command-line
 
 markd() { pandoc $1 | lynx -stdin }
 
+# update shell prompt when changing directories
+cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
+
 [[ "$(tty)" = "/dev/tty"* ]] && source $HOME/.config/shell/profile
 
 # Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-
+source $HOME/.local/src/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
