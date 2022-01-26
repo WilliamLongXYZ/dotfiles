@@ -69,4 +69,4 @@ cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
 [[ "$(tty)" = "/dev/tty"* ]] && source $HOME/.config/shell/profile
 
 # Load syntax highlighting; should be last.
-source $HOME/.local/src/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source $HOME/.local/src/shell/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh

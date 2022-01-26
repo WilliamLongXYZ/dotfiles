@@ -61,6 +61,7 @@ set noshowcmd
 	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+	autocmd BufRead,BufNewFile *.html set filetype=html
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 

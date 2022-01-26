@@ -1,7 +1,6 @@
 #!/bin/sh
 
 [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
-
 # root privelages not required for some system commands
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
         alias $command="doas $command"
@@ -111,3 +110,8 @@ alias hdu="dust --ignore-directory Pictures --ignore-directory Videos --ignore-d
 alias exi=exit
 # alias shcd="cd $(shfm)"
 #alias cd="builtin cd; source $XDG_CONFIG_HOME/shell/promptless"
+alias randname="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
+alias youtube-dl="yt-dlp"
+alias chmox="chmod +x"
+
+alias updateweb="rsync -rtvzP /home/will/.local/share/websites/williamlong.xyz/ root@williamlong.xyz:/var/www/williamlong"
