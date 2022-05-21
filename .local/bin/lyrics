@@ -1,0 +1,86 @@
+#!/bin/sh
+# Scrapes AZLyrics and prints lyrics of songs
+#
+# Usage:
+# $ lyrics name-of-song
+
+# converts html string to simple text
+html2text() {
+    lynx -dump -stdin | sed 's/^\s*//'
+}
+
+if [ $# -eq 0 ]
+then
+    cat << EOF
+usage: lyrics [-f | --first] name-of-song
+    -f | --first
+        print lyrics of first result for search query
+EOF
+    exit 0
+fi
+
+first=false
+search_args=""
+
+if [ "$1" = "-f" -o "$1" = "--first" ]
+then
+    first=true
+    shift
+fi
+
+
+base_url="https://search.azlyrics.com/search.php?q="
+args="$(python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<- EOF
+$@
+EOF
+)"
+search_url="$base_url$args"
+useragent="your-bot-1.0"
+
+results="$(curl -s "$search_url" -A "$useragent" | grep -E "<a href=\"https://www\.azlyrics.com/lyrics/.*\.html" | cut -d\" -f2)"
+
+if [ "$first" = true ]
+then
+    results="$(printf "%s" "$results" | head -n 1)"
+    num_results=1
+elif [ -z "$results" ]
+then
+    num_results=0
+else
+    num_results="$(printf "%s\n" "$results" | wc -l)"
+fi
+
+if [ $num_results -gt 1 ]
+then
+    final_url="$(printf "%s" "$results" | smenu -m "Select song:" -t1 -N . -n 20 -1 "." -q -d)"
+elif [ $num_results -eq 1 ]
+then
+    final_url="$results"
+elif [ $num_results -eq 0 ]
+then
+    printf "Found no results.\nYour query may be too restrictive or misspelled.\n"
+    exit 0
+fi
+
+page="$(curl -s "$final_url" -A "$useragent")"
+
+# song title appears to always be enclosed within <b> and </b><br>
+title="$(printf "%s" "$page" | grep -E "<b>.*</b><br>" | html2text)"
+
+# this gives us the real names of the writers, not the group
+# AZLyrics doesn't appear to place the group's name in a standard place on the page
+writers="$(printf "%s" "$page" | grep "Writer(s):" | html2text)"
+
+# the lyrics are the only thing on the page enclosed in a basic <div> tag
+lyrics="$(printf "%s" "$page" | sed -n '/<div>/,/<\/div>/p' | html2text)"
+
+
+### actually printing the page
+printf "\e[1m%s\n" "$title"
+
+if [ ! -z "$writers" ]
+then
+    printf "%s\n" "$writers"
+fi
+
+printf "\e[0;0;0m\n%s\n" "$lyrics"

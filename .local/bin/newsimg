@@ -1,0 +1,21 @@
+#!/bin/sh
+
+
+
+while getopts "v:f:" arg; do
+case $arg in
+v) view=true
+video=$OPTARG ;;
+f) video=$OPTARG ;;
+esac
+done
+
+dir=${XDG_CACHE_HOME:-$HOME/.cache}/newsimg
+mkdir -p $dir
+cd $dir
+curl -LO $video
+
+if [ "$view" = true ]; then
+sxiv $dir
+fi
+

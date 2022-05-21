@@ -30,4 +30,5 @@ else
 	[ -f "$zathuraconf.bak" ] && unlink "$zathuraconf" && mv "$zathuraconf.bak" "$zathuraconf"
 fi
 
-xwallpaper --zoom "$bgloc"
+#xwallpaper --zoom "$bgloc"
+xwallpaper --stretch "$bgloc"

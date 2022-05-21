@@ -2,7 +2,7 @@
 
 find /mnt/backups/ -mtime +28 -delete
 [ -f '/mnt/backups/full_backup-$(date +"%Y-%m-%d")' ] && exit
-tar -cvpzf /mnt/backups/full_backup-$(date +"%Y-%m-%d") / --one-file-system
+tar -cvpzf /media/mass/2tb/full_backup-$(date +"%Y-%m-%d") / --one-file-system
 
 # pushd /
 # doas tar -cvpzf $filename.tar.gz \

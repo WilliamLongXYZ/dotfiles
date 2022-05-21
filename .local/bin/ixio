@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# command-line pastebin
+
+echo '$@' | curl -F 'f:1=<-' ix.io
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+kjv -W genesis | sed -E 's/$/\n/ ; ls/$/.LP/g ; ls/^/.TL\n/g' | less
+
