@@ -108,11 +108,8 @@ alias ccaur="yes | yay -Sc; yay -Yc"
 alias xpinst="yay -Qe"
 alias hdu="dust --ignore-directory Pictures --ignore-directory Videos --ignore-directory Music --ignore-directory Documents --ignore-directory .cache/BraveSoftware --ignore-directory .config/BraveSoftware --ignore-directory .local/share/litecoin --ignore-directory .local/share/monero"
 alias exi=exit
-<<<<<<< HEAD
-=======
 #alias lf=/usr/bin/lfrun
 alias lf=lfub
->>>>>>> 6ff81ab (Added a few new configs, and updated others)
 # alias shcd="cd $(shfm)"
 #alias cd="builtin cd; source $XDG_CONFIG_HOME/shell/promptless"
 alias randname="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"

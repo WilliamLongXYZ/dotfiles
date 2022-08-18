@@ -69,6 +69,6 @@ cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
 # Load syntax highlighting; should be last.
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/plugins/fast-syntax-highlighting.plugin.zsh
 
-bat $HOME/notes/luke-computers
+bat $HOME/notes/todo/luke-computers.todo
 
 
