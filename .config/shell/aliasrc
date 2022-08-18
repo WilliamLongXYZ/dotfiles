@@ -108,6 +108,11 @@ alias ccaur="yes | yay -Sc; yay -Yc"
 alias xpinst="yay -Qe"
 alias hdu="dust --ignore-directory Pictures --ignore-directory Videos --ignore-directory Music --ignore-directory Documents --ignore-directory .cache/BraveSoftware --ignore-directory .config/BraveSoftware --ignore-directory .local/share/litecoin --ignore-directory .local/share/monero"
 alias exi=exit
+<<<<<<< HEAD
+=======
+#alias lf=/usr/bin/lfrun
+alias lf=lfub
+>>>>>>> 6ff81ab (Added a few new configs, and updated others)
 # alias shcd="cd $(shfm)"
 #alias cd="builtin cd; source $XDG_CONFIG_HOME/shell/promptless"
 alias randname="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
@@ -115,3 +120,47 @@ alias youtube-dl="yt-dlp"
 alias chmox="chmod +x"
 
 alias updateweb="rsync -rtvzP /home/will/.local/share/websites/williamlong.xyz/ root@williamlong.xyz:/var/www/williamlong"
+alias updategopher="rsync -rtvzP /home/will/.local/share/websites/gopher-/williamlong.xyz/ root@williamlong.xyz:/var/gopher"
+
+alias fixgpgdir="find ${XDG_DATA_DIR:-$HOME/.local/share}/gnupg -type f -exec chmod 600 {} \; && find ${XDG_DATA_DIR:-$HOME/.local/share}/gnupg -type d -exec chmod 700 {} \; "
+alias movememes="mv ${XDG_CACHE_HOME:-$HOME/.cache}/newsimg/* ${XDG_DATA_HOME:-$HOME/.local/share}/pictures/memes/theos"
+
+function domtohost() {
+sed -e 's/^/0.0.0.0 /' $1 $2
+}
+function domtotab() {
+for i in $(cat $1)
+do
+echo "/sbin/iptables -I INPUT -s $i -j DROP"
+echo "/sbin/iptables -I OUTPUT -d $i -j REJECT"
+done > $2
+}
+
+function tablock() {
+
+for i in $(cat $1)
+do
+/sbin/iptables -I INPUT -s $i -j DROP
+/sbin/iptables -I OUTPUT -d $i -j REJECT
+done
+}
+function tsxlock() {
+
+for i in $(cat $1)
+do
+/sbin/ip6tables -I INPUT -s $i -j DROP
+/sbin/ip6tables -I OUTPUT -d $i -j REJECT
+done
+}
+
+fmtforodysee() {
+        ffmpeg -i $1 -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 192k -pix_fmt yuv420p -movflags faststart $2
+}
+
+#alias slock="gpg-connect-agent --no-autostart reloadagent /bye && /usr/local/bin/slock"
+
+
+fast() {
+        tabbed -r 2 st -w '' -e dvtm
+}
+alias backup="rsync -avzP --delete  /home /media/mass/2tb/rsynchomebackups/2022-08-16"

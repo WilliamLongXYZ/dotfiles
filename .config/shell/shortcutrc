@@ -31,5 +31,5 @@ cfmc="$EDITOR /home/will/.config/ncmpcpp/config" \
 cfl="$EDITOR /home/will/.config/lf/lfrc" \
 cfL="$EDITOR /home/will/.config/lf/scope" \
 cfX="$EDITOR /home/will/.config/sxiv/exec/key-handler" \
-cfd="$EDITOR /home/will/.local/src/suckless/dwm/config." \
+cfd="$EDITOR /home/will/.local/src/suckless/dwm/config.h" \
 cfc="$EDITOR /home/will/.config/dircolors" \

@@ -5,9 +5,7 @@ source $XDG_CONFIG_HOME/shell/promptless # Set PS1
 setopt autocd
 stty stop undef		# Disable ctrl-s to freeze terminal.
 stty sane
-setopt interactive_comments
-
-# History in cache directory:
+setopt interactive_comments # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
@@ -69,4 +67,8 @@ cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
 [[ "$(tty)" = "/dev/tty"* ]] && source $HOME/.config/shell/profile
 
 # Load syntax highlighting; should be last.
-source $HOME/.local/src/shell/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/plugins/fast-syntax-highlighting.plugin.zsh
+
+bat $HOME/notes/luke-computers
+
+

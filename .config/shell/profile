@@ -13,11 +13,12 @@ unsetopt PROMPT_SP
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="brave"
+export BROWSER="firefox"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # This line will break some DMs.
@@ -34,6 +35,7 @@ export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+export ANDROID_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
@@ -42,7 +44,10 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
-#export STARDICT_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/stardict"
+export ABDUCO_SOCKET_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"
+export STARDICT_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/stardict"
+export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
@@ -62,10 +67,8 @@ export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
 # compinit -d $XDG_CACHE_HOME/zsh/zcompdum-$ZSH_VERSION
-export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
 
 # This is the list for lf icons:
 export LF_ICONS="di=📁:\
@@ -164,4 +167,3 @@ mpd
 
 # Switch escape and caps if tty and no passwd required:
 sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/ttymaps.kmap 2>/dev/null
-

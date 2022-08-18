@@ -12,6 +12,11 @@ setbg $HOME/Pictures/landscapes
 
 userresources=$XDG_CONFIG_HOME/x11/xresources
 usermodmap=$XDG_CONFIG_HOME/x11/xmodmap
+transmission-daemon &
+xrandr --dpi 96         # Set DPI. User may want to use a larger number for larger screens.
+setbg &
+#setbg ${XDG_DATA_HOME:-$HOME/.local/share}/pictures/walls &           # set the background with the `setbg` script
+remaps &        # run the remaps script, switching caps/esc and more; check it for more info
 
 # merge in defaults and keymaps
 # xrdb -merge "$userresources"
@@ -27,3 +32,27 @@ xrandr --dpi 96
 # Log DWM's output
 exec dwm > ~/.local/share/dwm/log
 
+keynav daemonize # control the mouse pointer with your keyboard
+
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
+	. "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile"
+#else
+#	#. "$HOME/.xprofile"
+fi
+
+
+autostart="mpd xcompmgr dunst unclutter pipewire"
+
+for program in $autostart; do
+        pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
+
+idlesleep 5 slock loginctl suspend & # sleep
+# idlesleep 5 doas zzz -H && slock & # hibernate
+
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
+
+# Log DWM's output
+ssh-agent dwm > ${XDG_DATA_HOME:-$HOME/.local/share}/dwm/log

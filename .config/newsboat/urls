@@ -1,18 +1,19 @@
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
-https://lukesmith.xyz/peertube "~Luke Smith (PeerTube)
-https://odysee.com/$/rss/@Luke/70 "~Luke Smith (Odysee)
 
-https://odysee.com/$/rss/@AlphaNerd/8 "~Mental Outlaw (Odysee)"
+https://lukesmith.xyz/peertube "~Luke Smith (PeerTube)"
+#https://odysee.com/$/rss/@Luke/70 "~Luke Smith (Odysee)
+
+#https://odysee.com/$/rss/@AlphaNerd/8 "~Mental Outlaw (Odysee)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~Mental Outlaw (YouTube)"
 
-https://odysee.com/$/rss/@DistroTube/2 "~DistroTube (Odysee)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (YouTube)"
+#https://odysee.com/$/rss/@DistroTube/2 "~DistroTube (Odysee)"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (YouTube)"
 
-https://odysee.com/$/rss/@BrodieRobertson/5 "~Brodie Robertson (Odysee)"
+#https://odysee.com/$/rss/@BrodieRobertson/5 "~Brodie Robertson (Odysee)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~Brodie Robertson (YouTube)"
 
-https://odysee.com/$/rss/@DenshiVideo/f "~DenshiLive (Odysee)"
-https://videos.denshi.org/feeds/videos.xml "~DenshiLive (PeerTube)"
+#https://odysee.com/$/rss/@DenshiVideo/f "~DenshiLive (Odysee)"
+#https://videos.denshi.org/feeds/videos.xml "~DenshiLive (PeerTube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCNwGa76xVVwdEVToRZBIUIg "DenshiLive (YouTube)"
 
 https://odysee.com/$/rss/@gotbletu:b "~gotbletu (Odysee)"
@@ -23,23 +24,51 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCKTehwyGCKF-b2wo0RKwrcg "~B
 https://landchad.net/rss.xml
 https://lukesmith.xyz/rss.xml
 
-https://odysee.com/$/rss/@ElijahSchaffer:4 "~Slightly Offensive (Odysee)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCMRxoFJPZiBcxgFzxN0ao-w "~Slightly Offensive (YouTube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCzZpgppwC_XQMe8lFiI77-Q "~John Doyle"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCnQC_G5Xsjhp9fEJKuIcrSw "~Ben Shapiro"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCO01ytfzgXYy4glnPJm4PPQ "~Matt Walsh"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCr4kgAUTFkGIwlWSodg43QA "~Michael Knowles"
-
-https://www.youtube.com/feeds/videos.xml?channel_id=UC-6ZMWfvS-KeuXyf_ZsLq4Q "~Agma Schwa"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCeh-pJYRZTBJDXMNZeWSUVA "~Artifexian"
-
-https://www.youtube.com/feeds/videos.xml?channel_id=UCDcdVPVsJRxAVKq4vY0NYeg "~Breaking in the Habit"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC0M7TQGIRUx8St2GKBS-EkA "~Upon Friar Review"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCvwbLBTkuIwqNm9kHUqWRnw "~Catholic Answers Live"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVdGX3N-WIJ5nUvklBTNhAw "~AscensionPresents"
-
-https://everydayliminality.libsyn.com/rss "~Everyday Liminality (Br. Casey and Br. Tito)"
+#https://odysee.com/$/rss/@ElijahSchaffer:4 "~Slightly Offensive (Odysee)"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCMRxoFJPZiBcxgFzxN0ao-w "~Slightly Offensive (YouTube)"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCzZpgppwC_XQMe8lFiI77-Q "~John Doyle"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCnQC_G5Xsjhp9fEJKuIcrSw "~Ben Shapiro"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCO01ytfzgXYy4glnPJm4PPQ "~Matt Walsh"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCr4kgAUTFkGIwlWSodg43QA "~Michael Knowles"
+#
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC-6ZMWfvS-KeuXyf_ZsLq4Q "~Agma Schwa"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCeh-pJYRZTBJDXMNZeWSUVA "~Artifexian"
+#
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCDcdVPVsJRxAVKq4vY0NYeg "~Breaking in the Habit"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC0M7TQGIRUx8St2GKBS-EkA "~Upon Friar Review"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCvwbLBTkuIwqNm9kHUqWRnw "~Catholic Answers Live"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCVdGX3N-WIJ5nUvklBTNhAw "~AscensionPresents"
+#
+#https://everydayliminality.libsyn.com/rss "~Everyday Liminality (Br. Casey and Br. Tito)"
 
 https://notrelated.xyz/rss
 https://based.cooking/rss.xml
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFOcmJpHnhsS-g4Ys5QbiKA "Prime Time 99"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A "Beast Philanthropy"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUaT_39o1x6qWjz7K2pWcgw "Beast Reacts"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCmIiXFTjkpGF00mfG2jGzew "C2Six (CathRap)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUfQ23SL-bXSF-dx8AzcjwQ "ChadTime (Naturalist)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCR5A3IcUluYxGQY04HHtKyA "Conspiracy Castle (Alex Stein)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfKcvotAeoEfbLdptHzRN7w "FoundNation"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCjgpFI5dU-D1-kh9H1muoxQ "Hacksmith"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_cZXWB6T4WRXyTZiyH_LDw "How To Be Christian"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJismr7CaFGYVZ520Hp18-Q "I'm Doing Great"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4cLGLhgQm7iAuZBw1DgH1w "JSJ Incorporated"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqMoXolAqyZR0grDUZkmXAA "Kai Clips"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCE--wgoUZofIbxbmws_UA3Q "Kinsall (Evan From BoyScouts)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJZ94qp4dtCw0Q5UQqAkg7w "larsandersen23"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCUqDqFoG67XrR8o9lbIzDQ "Louie Bee"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg "Mark Rober"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA "MrBeast"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCre8Baotd55y80mD3FiGyJQ "Nolan Barth"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCbpe1SYzZKG4RswEnxxSRZQ "Root BaSeD"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCbi7u8bfazr0n12ZLKdUxrA "Saint Lawrence"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCjQFLkJG0737sMibjcdKrsw "Shaw Strength"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZEvYxVEr0MMUG2ZCpG8bRA "Sir Sudo"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGddtMnh6bJd4tFhVkPyrpQ "Tate Clips"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC06E4Y_-ybJgBUMtXx8uNNw "TheBackyardScientist"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg "Wolfgang's Channel"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCmw-QGOHbHA5cDAvwwqUTKQ "Zaney (BaSeD)"
+
 
