@@ -15,5 +15,6 @@ if [ $dir = "will" ]; then
         dir="~"
 fi
 
-export PS1="$bold${red}[$yellow$USER$green@$blue$HOST $purple$dir${red}]$white$ ➜  $normal"
+#export PS1="$bold${red}[$yellow$USER$green@$blue$HOST $purple$dir${red}]$white$ ➜  $normal"
+export PS1="$bold${red}[$yellow$USER$green@$blue$HOST $purple$dir${red}]$white$ $normal"
 
