@@ -1,7 +1,6 @@
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-source $XDG_CONFIG_HOME/shell/promptless # Set PS1
-
+source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/promptless # Set PS1
 setopt autocd
 stty stop undef		# Disable ctrl-s to freeze terminal.
 stty sane
@@ -63,6 +62,8 @@ markd() { pandoc $1 | lynx -stdin }
 
 # update shell prompt when changing directories
 cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
+rm() { mv --target-directory=$XDG_DATA_HOME/trash --backup=numbered --force $@ > /dev/null }
+
 
 [[ "$(tty)" = "/dev/tty"* ]] && source $HOME/.config/shell/profile
 
@@ -70,5 +71,3 @@ cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/plugins/fast-syntax-highlighting.plugin.zsh
 
 bat $HOME/notes/todo/luke-computers.todo
-
-
