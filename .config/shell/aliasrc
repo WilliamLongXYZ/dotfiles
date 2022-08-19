@@ -12,7 +12,7 @@ alias most="du -hsx * | sort -rh | head -10"
 alias \
         cp="cp -rpiv" \
         mv="mv -iv" \
-        rm="rm -vI" \
+        #rm="rm -vI" \
         bc="bc -ql" \
         mkd="mkdir -pv" \
         mkdir="mkdir -pv" \
@@ -161,3 +161,6 @@ fast() {
         tabbed -r 2 st -w '' -e dvtm
 }
 alias backup="rsync -avzP --delete  /home /media/mass/2tb/rsynchomebackups/2022-08-16"
+
+alias la="ls -A"
+alias mkd="mkdir"
