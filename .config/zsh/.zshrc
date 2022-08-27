@@ -4,9 +4,10 @@ source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/promptless # Set PS1
 setopt autocd
 stty stop undef		# Disable ctrl-s to freeze terminal.
 stty sane
-setopt interactive_comments # History in cache directory:
-HISTSIZE=10000000
-SAVEHIST=10000000
+setopt interactive_comments
+# History in cache directory:
+HISTSIZE=1000000000
+SAVEHIST=1000000000
 HISTFILE=~/.cache/zsh/history
 
 # Load aliases and shortcuts if existent.
@@ -18,7 +19,7 @@ HISTFILE=~/.cache/zsh/history
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit "test"
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode and vimkeys
@@ -58,11 +59,10 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 
-markd() { pandoc $1 | lynx -stdin }
-
 # update shell prompt when changing directories
 cd() { builtin cd "$1"; source $XDG_CONFIG_HOME/shell/promptless ; }
 rm() { mv --target-directory=$XDG_DATA_HOME/trash --backup=numbered --force $@ > /dev/null }
+markd() { pandoc $1 | lynx -stdin }
 
 
 [[ "$(tty)" = "/dev/tty"* ]] && source $HOME/.config/shell/profile
@@ -70,4 +70,3 @@ rm() { mv --target-directory=$XDG_DATA_HOME/trash --backup=numbered --force $@ >
 # Load syntax highlighting; should be last.
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/plugins/fast-syntax-highlighting.plugin.zsh
 
-bat $HOME/notes/todo/luke-computers.todo
