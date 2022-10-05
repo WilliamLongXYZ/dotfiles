@@ -1,14 +1,16 @@
+# Luke's config for the Zoomer Shell
+
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/promptless # Set PS1
-setopt autocd
+source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/promptless # set PS1
+setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
-stty sane
 setopt interactive_comments
+
 # History in cache directory:
 HISTSIZE=1000000000
 SAVEHIST=1000000000
-HISTFILE=~/.cache/zsh/history
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
@@ -19,19 +21,21 @@ HISTFILE=~/.cache/zsh/history
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit "test"
+compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# vi mode and vimkeys
+# vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
+# Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# Change cursor shape for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
         vicmd) echo -ne '\e[1 q';;      # block
