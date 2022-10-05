@@ -55,7 +55,7 @@ alias \
 alias \
         vim="vim -u $XDG_CONFIG_HOME/vim/vimrc" \
         brave="brave; rm -r $HOME/.pki/ > /dev/null" \
-        #abook="abook --datafile $XDG_DATA_HOME/abook/addressbook" \
+        abook="abook --datafile $XDG_DATA_HOME/abook/addressbook" \
 
 # Other useful aliases
 alias \
