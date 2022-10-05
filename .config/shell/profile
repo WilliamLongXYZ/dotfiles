@@ -2,9 +2,8 @@
 
 # profile file. Runs on login. Environmental variables are set here.
 
-#export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/runit/service/dbus
-export DISPLAY=:0
+
+
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
@@ -46,8 +45,8 @@ export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
 export ABDUCO_SOCKET_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"
 export STARDICT_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/stardict"
-export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
-export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
+export SCREENRC="${XDG_CONFIG_HOME:-$HOME/.config}/screen/screenrc"
+export VIMINIT="source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
@@ -67,8 +66,6 @@ export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
-# compinit -d $XDG_CACHE_HOME/zsh/zcompdum-$ZSH_VERSION
 
 # This is the list for lf icons:
 export LF_ICONS="di=📁:\
