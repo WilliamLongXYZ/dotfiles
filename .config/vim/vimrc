@@ -20,6 +20,7 @@ set expandtab
 set backspace=2
 
 set number relativenumber
+set ruler
 
 set title
 set bg=light
